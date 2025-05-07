@@ -1,36 +1,46 @@
+// #include<stdio.h>
+// int main(){
+//     int num,i,factorCount;
+
+//     //Accept a number
+//     printf("Enter a number: ");
+//     scanf("%d",&num);
+
+//     factorCount =0;
+
+//     for(i=1 ; i<=num-1 ; i++){
+//         if(num%i==0){
+//             factorCount++;
+//             printf("the factor of a number:%d\n",factorCount);
+//         }
+//                    }
+//             printf("the factor of a number:%d\n",factorCount);
+// return 0;
+// }
+
 #include <stdio.h>
 
 int main()
 {
-    int i, num;
+    int num, i;
 
-    // accept a number
-    printf("Enter a number:\n");
+    // Accept a number
+    printf("Enter a number: ");
     scanf("%d", &num);
 
-    // declare factorial variable for storing variable
-    unsigned long long factorial = 1;
-
-    // i++         num
-    // 1    <=      5       true
-    // 2    <=      5       true
-    // 3    <=      5       true
-    // 4    <=      5       true
-    // 5    <=      5       true
-    // 6    <=      5       false (exit loop)
-    for (i = 1; i <= num; i++)
+    for (i = 1; i < num; i++)
     {
-
-        // = factorial * i
-        // =   1   *   1   =   1
-        // =   1   *   2   =   2
-        // =   2   *   3   =   6
-        // =   6   *   4   =   24
-        // =   24  *   5   =   120
-        factorial = factorial * i; // calculationg factorial
+        if (num % i == 0)
+        {
+            printf("%d", i);
+        }
+        if (i < num / 2 && num % i == 0)
+        {
+            printf(", ");
+        }
     }
 
-    printf("%d!=%d\n", num, factorial);
+    printf("\n");
 
     return 0;
 }
